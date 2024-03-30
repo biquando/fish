@@ -6,8 +6,8 @@ if status is-interactive
     abbr -a tree tree -C --dirsfirst
     abbr -a py "PYTHONSTARTUP=\$PYTHONSTARTUP ipython --TerminalInteractiveShell.editing_mode=vi --TerminalInteractiveShell.timeoutlen=0 --no-banner"
     abbr -a vim nvim
-    # abbr -a vimc "nvim -c 'cd ~/.config/nvim' ~/.config/nvim"
-    abbr -a vimc "cd ~/.config/nvim && nvim ."
+    abbr -a vimc "nvim -c 'cd ~/.config/nvim' ~/.config/nvim"
+    # abbr -a vimc "cd ~/.config/nvim && nvim ."
     abbr -a p pwd -P
     abbr -a ports "sudo lsof -i -P -n | grep LISTEN | grep ':[0-9]\+\ '"
     abbr -a t 'cut -c 1-$COLUMNS'

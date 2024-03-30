@@ -48,7 +48,7 @@ function fish_prompt --description 'Write out the prompt (Custom)'
     end
 
     echo -n -s \
-        (set_color white) '[' (date '+%T') '] ' \
+        # (set_color white) '[' (date '+%T') '] ' \
         (prompt_login)' ' \
         (set_color brblack) $prompt_private $normal \
         (set_color $color_cwd) (prompt_pwd -D 2) \
