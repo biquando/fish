@@ -1,11 +1,11 @@
 function __fish_user_set_path
-    switch $_HOSTNAME
-        case 'biquando-air'; set pathlist \
+    switch $_UNAMESYS
+        case 'Darwin'; set pathlist \
             $HOME/.cargo/bin \
             /opt/homebrew/bin \
             /opt/homebrew/sbin \
             /Applications/Docker.app/Contents/Resources/bin
-        case 'biquando-u'; set pathlist \
+        case 'Linux'; set pathlist \
             $HOME/services/bin
     end
 

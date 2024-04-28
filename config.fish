@@ -22,9 +22,9 @@ function __fish_user_interactive
             test -d "$ARCHIVE"; or mkdir -p $ARCHIVE
             if ! test -d "$ARCHIVE"
                 mkdir -p $ARCHIVE
-                rm -f "$ARCHIVE/current"
-                ln -s (date "+%y/%m") current
             end
+            rm -f "$ARCHIVE/current"
+            ln -s (date "+%y/%m") current
     end
 end
 
