@@ -18,13 +18,14 @@ function __fish_user_interactive
     ### Host-dependent ###############################################
     switch $_HOSTNAME
         case 'biquando-u'
-            set -g ARCHIVE (date "+$HOME"'/Archive/%y/%m')
+            set -l ARCHIVE_BASE "$HOME/Archive"
+            set -g ARCHIVE (date "+$ARCHIVE_BASE"'/%y/%m')
             test -d "$ARCHIVE"; or mkdir -p $ARCHIVE
             if ! test -d "$ARCHIVE"
                 mkdir -p $ARCHIVE
             end
-            rm -f "$ARCHIVE/current"
-            ln -s (date "+%y/%m") current
+            rm -f "$ARCHIVE_BASE/current"
+            ln -s (date "+%y/%m") "$ARCHIVE_BASE/current"
     end
 end
 
