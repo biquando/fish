@@ -6,6 +6,7 @@ end
 function __fish_user_interactive
     __fish_user_key_bindings
     fish_config theme choose tokyonight_night
+    # fish_config theme choose "Snow Day"
 
     ### Variables ####################################################
     set -g Q "$HOME/Cloud/Documents/UCLA/23-24/Spring"

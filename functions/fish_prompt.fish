@@ -1,8 +1,9 @@
 # Derived from /opt/homebrew/Cellar/fish/3.6.0/share/fish/functions/prompt_login.fish
 # Changes:
-#  - make vcs prompt yellow instead of normal
+#  - make vcs prompt cyan instead of normal
 #  - print number of background jobs
 #  - private mode
+#  - change non-root cwd to blue
 function fish_prompt --description 'Write out the prompt (Custom)'
     set -l last_pipestatus $pipestatus
     set -lx __fish_last_status $status # Export for __fish_print_pipestatus.
@@ -11,6 +12,7 @@ function fish_prompt --description 'Write out the prompt (Custom)'
         or set -g fish_color_status red
 
     # Color the prompt differently when we're root
+    set -l fish_color_cwd blue
     set -l color_cwd $fish_color_cwd
     set -l suffix '❯'
     if functions -q fish_is_root_user; and fish_is_root_user
@@ -52,9 +54,9 @@ function fish_prompt --description 'Write out the prompt (Custom)'
         (prompt_login)' ' \
         (set_color brblack) $prompt_private $normal \
         (set_color $color_cwd) (prompt_pwd -D 2) \
-        (set_color yellow) (fish_vcs_prompt) $normal \
+        (set_color cyan) (fish_vcs_prompt) $normal \
         (set_color white) $prompt_jobs $normal \
         ' ' $prompt_status \
         '
- ' (set_color yellow) $suffix $normal ' '
+ ' (set_color cyan) $suffix $normal ' '
 end
